@@ -1,0 +1,14 @@
+[flake8]
+ignore = E203, E266, E501, W503
+max-line-length = 119
+max-doc-length = 79
+max-complexity = 18
+select = B,C,E,F,W,T4,B,B9,B950
+exclude = 
+    __init__.py,
+    .venv,
+    .git,
+    tests/*,
+    __pycache__,
+    .mypy_cache,
+    .pytest_cache
