@@ -1,0 +1,77 @@
+### System Files ###
+.DS_Store
+Thumbs.db
+.AppleDouble
+.LSOverride
+._*
+*~
+.Trash-*
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+
+### Text Editor and IDE ###
+**/.idea/
+**/.vscode/
+**/.devcontainer
+**/*.code-workspace
+**/.vscode-test
+
+### Python ###
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.log
+# Environments
+**/*.env
+!**/*example.env
+**/*.ini
+!**/*.example.ini
+**/venv/
+**/.venv/
+# pytest
+**/.pytest_cache/
+pytestdebug.log
+# C extensions
+*.so
+# Translations
+*.mo
+*.pot
+# pyenv
+.python-version
+# Django
+*.sqlite3
+media/
+staticfiles/
+mediafiles/
+*db.json
+# Flask
+instance/
+.webassets-cache
+# FastAPI
+!**/alembic.ini
+
+### SASS and SCSS ###
+.sass-cache/
+*.css.map
+
+### Angular ###
+# compiled output
+dist/
+tmp/
+app/**/*.js
+app/**/*.js.map
+# dependencies
+**/node_modules
+**/bower_components
+**/npm-debug.log
+# e2e
+e2e/*.js
+e2e/*.map
+
+### Project Assets ###
+*.http
+playground*
+*.tar
