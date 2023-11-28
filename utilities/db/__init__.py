@@ -1,5 +1,5 @@
 from .entity import BaseEntity, StatusMixin, TimeStampMixin
-from .repository import Repository, PagePaginator, OffsetLimitPaginator
+from .repository import Repository
 from .setup import DefaultManager
 
 __all__ = [
@@ -8,6 +8,4 @@ __all__ = [
     "TimeStampMixin",
     "DefaultManager",
     "Repository",
-    "OffsetLimitPaginator",
-    "PagePaginator",
 ]

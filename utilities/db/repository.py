@@ -1,8 +1,8 @@
 from abc import ABC, abstractmethod
 from typing import Generic, TypeVar, Type, Sequence, Annotated
 
-from fastapi import Depends
-from pydantic import BaseModel, Field
+from fastapi import Depends, Query
+from pydantic import BaseModel
 from sqlalchemy import select, BinaryExpression
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.sql.functions import count
@@ -21,8 +21,8 @@ class Paginator(ABC, BaseModel):
 
 
 class OffsetLimitPaginator(Paginator):
-    offset: int = Field(default=0, ge=0)
-    limit: int = Field(default=10, gt=0)
+    offset: int = Query(default=0, ge=0)
+    limit: int = Query(default=10, gt=0)
 
     @property
     def query_data(self) -> tuple[int, int]:
@@ -30,8 +30,8 @@ class OffsetLimitPaginator(Paginator):
 
 
 class PagePaginator(Paginator):
-    page: int = Field(default=1, gt=0)
-    size: int = Field(default=10, le=100)
+    page: int = Query(default=1, gt=0)
+    size: int = Query(default=10, le=100)
 
     @property
     def query_data(self) -> tuple[int, int]:

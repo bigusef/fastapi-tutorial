@@ -2,6 +2,8 @@ from fastapi import APIRouter
 from starlette import status
 
 from config.dependency import RequestHeaders
+from utilities.db.dependency import PagePaginator
+
 from .repository import CountryRepository
 from .schema import FullCountryData, CountryForm, CountryData
 
@@ -21,11 +23,8 @@ async def create_new_country(data: CountryForm, repo: CountryRepository) -> Full
 
 
 @router.get("/country/full")
-async def list_country_with_full_data(repo: CountryRepository) -> list[FullCountryData]:
-    """
-    this is a full description
-    """
-    data = await repo.select_all()
+async def list_country_with_full_data(repo: CountryRepository, pager: PagePaginator) -> list[FullCountryData]:
+    data = await repo.select_all(paginator=pager)
     return [FullCountryData.model_validate(i) for i in data]
 
 
